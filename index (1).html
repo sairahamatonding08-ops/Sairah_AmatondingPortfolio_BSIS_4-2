@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Resume - Sairah Amatonding">
+    <title>Sairah Amatonding - Resume</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: rgba(255, 255, 255, 0.1);
+            --secondary: rgba(255, 255, 255, 0.2);
+            --accent: rgba(255, 255, 255, 0.3);
+            --text: #ffffff;
+            --text-light: rgba(255, 255, 255, 0.8);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgxMzUpIj48cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+');
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Section */
+        .header-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 60px 0;
+            box-shadow: var(--shadow);
+            border-bottom: var(--border);
+        }
+        
+        .profile-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .profile-image {
+            flex: 0 0 200px;
+        }
+        
+        .profile-image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+        
+        .profile-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .profile-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ffffff, #a8edea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .info-item {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        .bio {
+            margin-top: 20px;
+        }
+        
+        .bio p {
+            font-style: italic;
+            margin-top: 5px;
+            opacity: 0.9;
+            color: var(--text-light);
+        }
+        
+        /* Education Section */
+        .education-section {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+        
+        .education-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            background: linear-gradient(45deg, #ffffff, #a8edea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+        
+        .education-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 3px;
+        }
+        
+        .education-item {
+            margin-bottom: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .education-item h3 {
+            font-size: 1.8rem;
+            color: var(--text);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .academic-year {
+            margin-bottom: 35px;
+            padding-left: 25px;
+            border-left: 3px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .academic-year h4 {
+            font-size: 1.4rem;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+        
+        .subject-list {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+        }
+        
+        .subject-list li {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px 15px;
+            border-radius: 10px;
+            transition: var(--transition);
+            border: var(--border);
+            backdrop-filter: blur(10px);
+        }
+        
+        .subject-list li:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            background: linear-gradient(45deg, #ffffff, #a8edea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+        
+        .contact-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 3px;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            border: var(--border);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--text);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text);
+            backdrop-filter: blur(5px);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+        }
+        
+        .submit-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border: var(--border);
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Footer/Social Media Section */
+        .social-media-section {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(15px);
+            padding: 60px 0;
+            text-align: center;
+            border-top: var(--border);
+        }
+        
+        .social-media-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #ffffff, #a8edea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            transition: var(--transition);
+            border: var(--border);
+            backdrop-filter: blur(10px);
+        }
+        
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .social-icon {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-image {
+                margin-bottom: 20px;
+            }
+            
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+            
+            .subject-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-link {
+                width: 250px;
+                justify-content: center;
+            }
+
+            .education-item {
+                padding: 25px;
+            }
+
+            .contact-form {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header-section">
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <!-- YOUR PHOTO IS ATTACHED HERE -->
+                    <img src="https://uploads.onecompiler.io/43y6bgf4b/43y6av3kn/IMG_20231215_100820_574.jpg" alt="Profile picture of Sairah Amatonding">
+                </div>
+                <div class="profile-info">
+                    <h1>Sairah Amatonding</h1>
+                    <div class="info-item">
+                        <strong>Age:</strong> 21
+                    </div>
+                    <div class="info-item">
+                        <strong>Address:</strong> Immaculate Conception Subdivision, Bulan Sorsogon
+                    </div>
+                    <div class="info-item">
+                        <strong>Course:</strong> BS Information System
+                    </div>
+                    <div class="bio">
+                        <strong>Bio:</strong>
+                        <p>IS student at Sorsogon State University-Bulan Campus, my hubby is playing chess, i also love cooking and spending time with my siblings. My goal is to be become a business woman that will apply my knowledge and enthusiasm to become one.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="education-section">
+        <div class="container">
+            <h2>Educational Background</h2>
+
+            <div class="education-item">
+                <h3>College</h3>
+                <div class="academic-year">
+                    <h4>2025-2026</h4>
+                    <ul class="subject-list">
+                        <li>Applications Development and Emerging Technologies</li>
+                        <li>Capstone Project 2</li>
+                        <li>Strategy Management and Acquisition</li>
+                        <li>Project Management</li>
+                        <li>IT Security and Risk Management</li>
+                        <li>Analytics Techniques and Tools</li>
+                    </ul>
+                </div>
+                <div class="academic-year">
+                    <h4>2024-2025</h4>
+                    <ul class="subject-list">
+                        <li>Information Management</li>
+                        <li>Enterprise Architecture</li>
+                        <li>Business Process Management</li>
+                        <li>Quantitative Methods</li>
+                        <li>Business Intelligence</li>
+                        <li>IT Service Management</li>
+                        <li>Enterprise Systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <h3>High School</h3>
+                <div class="academic-year">
+                    <h4>Grade 12</h4>
+                    <ul class="subject-list">
+                        <li>Introduction To The Philosophy Of The Human Person</li>
+                        <li>Comtemporary Philippines Arts From The Regions</li>
+                        <li>Personal Development</li>
+                        <li>Understanding Culture, Society And Politics</li>
+                        <li>Physical Education and Health 3</li>
+                        <li>Inquiries, Investigations And Immersion 2</li>
+                        <li>Practical Research 2</li>
+                        <li>Agricultiral Crop Production</li>
+                    </ul>
+                </div>
+                <div class="academic-year">
+                    <h4>Grade 11</h4>
+                    <ul class="subject-list">
+                        <li>Reading And Writing</li>
+                        <li>Pagbasa At Pagsusuri Ng Ibat-Ibang Teksto Tungo Sa Pananaliksik</li>
+                        <li>21st Century Literature From The Philippines And The World</li>
+                        <li>Statistics And Probability</li>
+                        <li>Physical Science</li>
+                        <li>Physical Education and Health 2</li>
+                        <li>Practical Research 1</li>
+                        <li>Empowerment Technologies</li>
+                        <li>Agricrop Production NCI 2</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="academic-year">
+                    <h4>Skills</h4>
+                    <ul class="subject-list">
+                        <li>Teamwork</li>
+                        <li>Communication</li>
+                        <li>Critical Thinking</li>
+                        <li>Problem Solving</li>
+                        <li>Time Management</li>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Your full name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Your message here..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="social-media-section">
+        <div class="container">
+            <h2>Connect with Me</h2>
+            <div class="social-links">
+                <a href="https://www.facebook.com/sairah.dormiendo" target="_blank" class="social-link">
+                    <span class="social-icon">📘</span>
+                    Facebook
+                </a>
+                <a href="https://www.instagram.com/yourname.sai?igsh=MW5jdHExNm9jeDY5bg==" target="_blank" class="social-link">
+                    <span class="social-icon">📷</span>
+                    Instagram
+                </a>
+                <a href="https://www.linkedin.com/in/sairah-amatonding-126440387" target="_blank" class="social-link">
+                    <span class="social-icon">💼</span>
+                    LinkedIn
+                </a>
+                <a href="mailto:sairahamatonding11@gmail.com" class="social-link">
+                    <span class="social-icon">✉️</span>
+                    Email
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
